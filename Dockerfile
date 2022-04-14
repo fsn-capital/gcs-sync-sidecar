@@ -8,10 +8,11 @@ RUN go build -o app main.go
 FROM golang:1.18.1-buster as final 
 WORKDIR /app
 COPY --from=builder /app/app ./app
-# Downloading gcloud package
-RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
-
-# Installing the package
+# download crcmod
+RUN apt-get update -y && apt-get install -y python3-pip && pip3 install --no-cache-dir -U crcmod && apt remove -y python3-pip && rm -rf /var/lib/apt/lists/*
+# download sdk 
+ADD https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz /tmp/google-cloud-sdk.tar.gz 
+# install sdk
 RUN mkdir -p /usr/local/gcloud \
     && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
     && /usr/local/gcloud/google-cloud-sdk/install.sh
