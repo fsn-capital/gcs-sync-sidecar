@@ -11,14 +11,15 @@ on:
       - common/**.go
       - Makefile
       - Dockerfile
-    branches: [ main ]
+      - .github/workflows/ci.yml
+    branches: [main]
   pull_request:
     paths:
       - main.go
       - common/**.go
       - Makefile
       - Dockerfile
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -55,9 +56,8 @@ jobs:
           gcloud auth configure-docker -q
       - name: Build
         run: |
-          if [ ${GITHUB_REF} = 'refs/heads/master' ]; then
+          if [ ${GITHUB_REF} = 'refs/heads/main' ]; then
             make build
           else
             make build TAG=${GITHUB_SHA}
           fi
-      

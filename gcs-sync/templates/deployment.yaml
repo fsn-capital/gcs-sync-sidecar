@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }} 
+  namespace: {{ .Release.Namespace }}
+  {{- with .Values.labels }}
+  labels:
+    {{ toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: 1  # must be 1
+  {{- with .Values.labels }}
+  selector:
+    matchLabels:
+      {{ toYaml . | nindent 6 }}
+  {{- end }}
+  template:
+    metadata:
+      {{- with .Values.labels }}
+      labels:
+        {{ toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      containers:
+      - name: gcs-sync
+        image: {{ printf "%s:%s" .Values.image.name .Values.image.tag }}
+        imagePullPolicy: {{ default "IfNotPresent" .Values.image.pullPolicy }}
+        {{- with .Values.env }}
+        env: 
+        {{ toYaml . | nindent 8 }}
+        {{- end }}
+        {{- with .Values.volumeMounts }}
+        volumeMounts:
+        {{ toYaml . | nindent 8 }}
+        {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+      {{ toYaml . | nindent 6 }}
+      {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
+      {{ toYaml . | nindent 6 }}
+      {{- end }}
