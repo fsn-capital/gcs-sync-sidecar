@@ -1,6 +1,7 @@
 FROM golang:1.18.1-buster as builder
 WORKDIR /app
 COPY go.mod go.sum main.go ./
+COPY common ./common
 RUN go mod download 
 RUN go build -o app main.go
 

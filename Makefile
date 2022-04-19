@@ -1,4 +1,4 @@
-TAG ?= v0.0.2-alpha
+TAG ?= v0.0.3-alpha
 
 .PHONY: build
 build: 
