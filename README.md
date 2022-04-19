@@ -1,4 +1,6 @@
-# gcs-sync-sidecar ![example workflow](https://github.com/fsn-capital/gcs-sync-sidecar/workflows/CI/badge.svg)
+# GCS Sync ![example workflow](https://github.com/fsn-capital/gcs-sync-sidecar/workflows/CI/badge.svg)
+
+This repository contains a custom application to sync files from/to GCS buckets.
 
 ## Getting Started
 
