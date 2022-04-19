@@ -35,6 +35,5 @@ jobs:
           gcloud auth configure-docker -q
       - run: |
           docker buildx create --use && \
-          cd ${GITHUB_WORKSPACE} && \
           make build
       
