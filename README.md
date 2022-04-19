@@ -4,6 +4,10 @@
 
 Install helm secrets [here](https://github.com/jkroepke/helm-secrets/wiki/Installation).
 
+## Getting GPG Key
+
+Please contact ``` Mert Kayhan ```.
+
 ## Rendering Templates
 
 ``` helm secrets install --debug --dry-run -f gcs-sync/secrets.yaml -f gcs-sync/values.yaml gcs-sync gcs-sync ```
