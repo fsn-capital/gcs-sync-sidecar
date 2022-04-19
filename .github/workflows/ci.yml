@@ -23,8 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0.6.0
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: GCloud Setup
+        uses: google-github-actions/setup-gcloud@v0.6.0
         with:
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           project_id: ${{ secrets.PROJECT_ID }}
