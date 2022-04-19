@@ -1,4 +1,4 @@
-# GCS Sync [![CI](https://github.com/fsn-capital/gcs-sync-sidecar/actions/workflows/ci.yml/badge.svg)](https://github.com/fsn-capital/gcs-sync-sidecar/workflows/CI/badge.svg) [![Chart Builder](https://github.com/fsn-capital/gcs-sync-sidecar/actions/workflows/chart.yml/badge.svg)](https://github.com/fsn-capital/gcs-sync-sidecar/actions/workflows/chart.yml)
+# GCS Sync [![CI](https://github.com/fsn-capital/gcs-sync-sidecar/workflows/CI/badge.svg)](https://github.com/fsn-capital/gcs-sync-sidecar/actions/workflows/ci.yml) [![Chart Builder](https://github.com/fsn-capital/gcs-sync-sidecar/actions/workflows/chart.yml/badge.svg)](https://github.com/fsn-capital/gcs-sync-sidecar/actions/workflows/chart.yml)
 
 This repository contains a custom application to sync files from/to GCS buckets.
 
