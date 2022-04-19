@@ -23,8 +23,8 @@ spec:
     spec:
       containers:
       - name: gcr-sync
-        image: {{ printf "%s:%s" .Values.image.name .Values.image.tag }}  #gcr.io/fsn-insight/gcs-sync:v0.0.3-alpha
-        imagePullPolicy: {{ default "IfNotPresent" .Values.image.pullPolicy }} #IfNotPresent
+        image: {{ printf "%s:%s" .Values.image.name .Values.image.tag }}
+        imagePullPolicy: {{ default "IfNotPresent" .Values.image.pullPolicy }}
         {{- with .Values.env }}
         env: 
         {{ toYaml . | nindent 8 }}
