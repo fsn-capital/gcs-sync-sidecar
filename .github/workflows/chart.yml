@@ -39,7 +39,7 @@ jobs:
             echo "::set-output name=changed::true"
           fi
       - name: Run chart-testing (lint)
-        run: ct lint --chart-dirs --all gcs-sync
+        run: ct lint --chart-dirs gcs-sync --all
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.2.0
