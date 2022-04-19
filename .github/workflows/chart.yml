@@ -46,7 +46,7 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        run: ct install --chart-dirs gcs-sync
+        run: ct install --chart-dirs gcs-sync --all
   release:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
