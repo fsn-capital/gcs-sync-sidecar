@@ -26,3 +26,7 @@ volumes:
   - name: dags
     persistentVolumeClaim:
       claimName: airflow-dags
+pvc:
+  name: airflow-dags
+  request: 1Gi
+  volumeName: filestore-nfs-pv
