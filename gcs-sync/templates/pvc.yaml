@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.pvc.name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes:
+    - ReadWriteMany  # must be rwx
+  resources:
+    requests:
+      storage: {{ .Values.pvc.request }}
+  storageClassName: ""  # must be ""
+  volumeName: {{ .Values.pvc.volumeName }}
