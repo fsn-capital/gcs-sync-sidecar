@@ -3,6 +3,20 @@ entries:
   gcs-sync:
   - apiVersion: v2
     appVersion: v0.0.3-alpha
+    created: "2022-04-22T07:17:22.927294897Z"
+    description: A Helm chart for Kubernetes
+    digest: 7f70ca02ae6701684db1d2f4219589126c3ecd57f0156dd8e3328fd51c67dc64
+    keywords:
+    - gcs
+    - sync
+    - sidecar
+    name: gcs-sync
+    type: application
+    urls:
+    - https://github.com/fsn-capital/gcs-sync-sidecar/releases/download/gcs-sync-0.0.2/gcs-sync-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: v0.0.3-alpha
     created: "2022-04-19T14:11:05.029963116Z"
     description: A Helm chart for Kubernetes
     digest: e8fd76c18e7739de4865b4dfde8dfd1aea7d5fff3e39e94b6f9cf766e48f575c
@@ -13,4 +27,4 @@ entries:
     urls:
     - https://github.com/fsn-capital/gcs-sync-sidecar/releases/download/gcs-sync-0.0.1/gcs-sync-0.0.1.tgz
     version: 0.0.1
-generated: "2022-04-19T14:11:05.029967516Z"
+generated: "2022-04-22T07:17:22.927308397Z"
