@@ -1,3 +1,4 @@
+{{- if .Values.pvc.create }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -11,3 +12,4 @@ spec:
       storage: {{ .Values.pvc.request }}
   storageClassName: ""  # must be ""
   volumeName: {{ .Values.pvc.volumeName }}
+{{- end }}
