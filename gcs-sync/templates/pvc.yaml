@@ -1,15 +1,15 @@
-{{- if .Values.pvc.create }}
+{{- if .Values.gcsSync.pvc.create }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.pvc.name }}
+  name: {{ .Values.gcsSync.pvc.name }}
   namespace: {{ .Release.Namespace }}
 spec:
   accessModes:
     - ReadWriteMany  # must be rwx
   resources:
     requests:
-      storage: {{ .Values.pvc.request }}
+      storage: {{ .Values.gcsSync.pvc.request }}
   storageClassName: ""  # must be ""
-  volumeName: {{ .Values.pvc.volumeName }}
+  volumeName: {{ .Values.gcsSync.pvc.volumeName }}
 {{- end }}
